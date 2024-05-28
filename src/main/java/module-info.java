@@ -10,7 +10,15 @@ module app.tastewizard {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.sql;
+    requires javafx.media;
 
     opens app.tastewizard to javafx.fxml;
     exports app.tastewizard;
+    opens app.AppIntro to javafx.fxml;
+    exports app.AppIntro;
+    opens app.Register to javafx.fxml;
+    exports app.Register;
+    opens app.HomePage to javafx.fxml;
+    exports app.HomePage;
 }

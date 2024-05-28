@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="700.0" maxWidth="900.0" minHeight="700.0" minWidth="900.0" prefHeight="700.0" prefWidth="900.0" spacing="20.0" style="-fx-background-color: linear-gradient(to right, white, #4b7dbf);" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Register.RegisterPageController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+   <children>
+      <HBox maxHeight="500.0" maxWidth="800.0" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: transparent;">
+         <children>
+            <VBox maxHeight="500.0" maxWidth="400.0" minHeight="500.0" minWidth="400.0" prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white; -fx-background-radius: 35 0 0 35;">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="500.0" prefWidth="400.0" spacing="10.0" style="-fx-background-color: #4b7dbf; -fx-background-radius: 35 133 133 35;">
+                     <children>
+                        <Label style="-fx-text-fill: white;" text="Welcome to Taste Wizard!">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label style="-fx-text-fill: black; -fx-opacity: 0.45;" text="You Have Account ? Log in now" textFill="#000000ab">
+                           <padding>
+                              <Insets top="50.0" />
+                           </padding>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="LoginButton" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 9;" text="Log In">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white; -fx-border-radius: 0  35 35 0; -fx-background-radius: 0 35 35 0;">
+               <children>
+                  <VBox alignment="CENTER" maxHeight="486.0" maxWidth="320.0" minHeight="200.0" minWidth="320.0" prefHeight="486.0" prefWidth="320.0" spacing="10.0">
+                     <children>
+                        <Label text="Sign Up">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="Name" maxHeight="40.0" maxWidth="320.0" minHeight="40.0" minWidth="320.0" prefHeight="40.0" prefWidth="320.0" promptText="Name" style="-fx-background-radius: 9;" />
+                        <TextField fx:id="Email" layoutX="10.0" layoutY="258.0" maxHeight="40.0" maxWidth="320.0" minHeight="40.0" minWidth="320.0" prefHeight="40.0" prefWidth="320.0" promptText="Email" style="-fx-background-radius: 9;" />
+                        <TextField fx:id="Address" layoutX="10.0" layoutY="233.0" maxHeight="40.0" maxWidth="320.0" minHeight="40.0" minWidth="320.0" prefHeight="40.0" prefWidth="320.0" promptText="Address" style="-fx-background-radius: 9;" />
+                        <PasswordField fx:id="Password" maxHeight="40.0" maxWidth="320.0" minHeight="40.0" minWidth="320.0" prefHeight="40.0" prefWidth="320.0" promptText="Password" style="-fx-background-radius: 9;" />
+                        <PasswordField fx:id="ConfirmPassword" layoutX="10.0" layoutY="252.0" maxHeight="40.0" maxWidth="320.0" minHeight="40.0" minWidth="320.0" prefHeight="40.0" prefWidth="320.0" promptText="Confirm Password" style="-fx-background-radius: 9;" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="320.0" spacing="20.0">
+                           <children>
+                              <Label prefHeight="27.0" prefWidth="110.0" style="-fx-opacity: 0.45;" text="Birth Date :">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="BirthDate" />
+                           </children>
+                        </HBox>
+                        <ComboBox fx:id="Gender" prefWidth="150.0" promptText="Gender" style="-fx-background-color: white; -fx-opacity: 0.45;" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                           <children>
+                              <Label style="-fx-opacity: 0.45;" text="Profile Photo">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="choosePfpButton" mnemonicParsing="false" style="-fx-background-color: black; -fx-text-fill: white;" text="Choose" />
+                              <Label fx:id="PhotoName" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="RegisterButton" maxHeight="40.0" maxWidth="150.0" minHeight="40.0" minWidth="150.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 9;" text="Sign Up">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
