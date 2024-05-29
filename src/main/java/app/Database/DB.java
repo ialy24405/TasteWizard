@@ -1,6 +1,7 @@
 package app.Database;
 
 import app.Classes.User;
+import app.Classes.product;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -153,10 +154,34 @@ public class DB {
             return Collections.emptyList();
         }
     }
-
+    private product getProduct(int product_id){
+        try {
+            preparedStatement = connection.prepareStatement("SELECT * FROM products WHERE product_id = ?");
+            preparedStatement.setInt(1, product_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            product product = new product();
+            if (resultSet.next()) {
+                product.setProduct_id(resultSet.getInt("product_id"));
+                product.setCategory_id(resultSet.getInt("category_id"));
+                product.setProduct_name(resultSet.getString("product_name"));
+//                product.setProduct_description(resultSet.getString("product_description"));
+//                product.setProduct_price(resultSet.getDouble("product_price"));
+//                product.setProduct_image(resultSet.getString("product_image"));
+            }
+            return product;
+        } catch (SQLException e) {
+            System.out.println("Error in server : " + e.getMessage());
+            return null;
+        }
+    }
     private double[][] getAverageOfBeveragesOfUser(int userId) {
         try {
-            preparedStatement = connection.prepareStatement("SELECT AVG(color),AVG(clarity),AVG(consistency),AVG(appearance),AVG(aroma_intensity),AVG(aroma_sweetness),AVG(aroma_fruitiness),AVG(off_aromas),AVG(sweetness),AVG(sourness),AVG(bitterness),AVG(flavor_intensity),AVG(aftertaste),AVG(overall_flavor),AVG(body_thickness),AVG(carbonation),AVG(smoothness),AVG(acceptance) FROM beverages WHERE product_id in (SELECT product_id FROM products WHERE category_id = 1 AND product_id in (select product_id from beverages where user_id = ? ))  GROUP BY product_id");
+            preparedStatement = connection.prepareStatement("SELECT AVG(color),AVG(clarity),AVG(consistency)"+
+                    ",AVG(appearance),AVG(aroma_intensity),AVG(aroma_sweetness),AVG(aroma_fruitiness),AVG(off_aromas)"+
+                    ",AVG(sweetness),AVG(sourness),AVG(bitterness),AVG(flavor_intensity),AVG(aftertaste),AVG(overall_flavor)"+
+                    ",AVG(body_thickness),AVG(carbonation),AVG(smoothness),AVG(acceptance) "+
+                    "FROM beverages WHERE product_id in (SELECT product_id FROM products WHERE category_id = 1 "+
+                    "AND product_id in (select product_id from beverages where user_id = ? ))  GROUP BY product_id");
             preparedStatement.setInt(1, userId);
             ResultSet resultSet = preparedStatement.executeQuery();
             double[][] matrix = new double[100][100];

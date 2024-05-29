@@ -69,7 +69,12 @@ public class HomePageController {
         if(user.getProfilePicture()==null || user.getProfilePicture().isEmpty()){
             if(user.getGender().equalsIgnoreCase("Female"))
             {
-                File imageFile = new File("src/main/resources/app/Images/Female.jpg");
+                File imageFile = new File("src/main/resources/app/Images/Female3.jpg");
+                if (imageFile.exists()) {
+                    image = new Image(imageFile.toURI().toString());
+                }
+            }else{
+                File imageFile = new File("src/main/resources/app/Images/Male.jpg");
                 if (imageFile.exists()) {
                     image = new Image(imageFile.toURI().toString());
                 }
