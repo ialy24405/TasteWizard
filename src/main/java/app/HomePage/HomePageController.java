@@ -19,6 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.shape.Circle;
 import javafx.stage.Modality;
@@ -42,7 +43,8 @@ public class HomePageController {
     private HBox Qustionnare;
     @FXML
     private HBox ProfilePage;
-
+    @FXML
+    private AnchorPane HomePane;
     public void initialize() {
         LogOutBox.setOnMouseClicked(LogOutBoxClicked());
         Qustionnare.setOnMouseClicked(QustionnareClicked());
@@ -167,5 +169,11 @@ public class HomePageController {
             category = "Salty Snacks";
         }
 //        System.out.println("Category: " + this.category.getCategory_name());
+    }
+
+    public void setPane(AnchorPane pane) {
+        HomePane.getChildren().clear();
+        HomePane.getChildren().add(pane);
+        HomePane.setStyle("-fx-background-color: white");
     }
 }

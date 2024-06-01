@@ -1,5 +1,10 @@
 package app.Categoryis;
 
-public class CategoryisController {
+import app.Classes.User;
 
+public class CategoryisController {
+    private User user;
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

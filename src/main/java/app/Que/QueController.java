@@ -1,12 +1,16 @@
 package app.Que;
 
+import app.Categoryis.CategoryisApplication;
+import app.Categoryis.CategoryisController;
 import app.Classes.User;
 import app.HomePage.HomePageController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class QueController {
@@ -26,6 +30,15 @@ public class QueController {
             String category = Category.getValue();
             if (category.equalsIgnoreCase("Bevarages")) {
                 category = "Beverage";
+                FXMLLoader fxmlLoader = new FXMLLoader(CategoryisApplication.class.getResource("Categoryis.fxml"));
+                try {
+                    AnchorPane pane = fxmlLoader.load();
+                    CategoryisController controller = fxmlLoader.getController();
+                    controller.setUser(user);
+                    homePageController.setPane(pane);
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex.getMessage());
+                }
             } else if (category.equalsIgnoreCase("Sweet Snacks")) {
                 category = "SweetSnakes";
             } else if (category.equalsIgnoreCase("Salty Snacks")) {
