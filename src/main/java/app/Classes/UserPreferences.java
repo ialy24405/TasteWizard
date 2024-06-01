@@ -7,6 +7,17 @@ public class UserPreferences {
     private String organic_food_awareness;
     private String food_preference;
 
+    public UserPreferences(int userId, String culturalDietaryRestrictions, String organicFoodAwareness, String foodPreference) {
+        this.cultural_dietary_restrictions = culturalDietaryRestrictions;
+        this.organic_food_awareness = organicFoodAwareness;
+        this.food_preference = foodPreference;
+        this.user_id = userId;
+    }
+
+    public UserPreferences() {
+
+    }
+
     public int getPreference_id() {
         return preference_id;
     }

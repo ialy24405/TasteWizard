@@ -8,6 +8,17 @@ public class UserHealthGoals {
     private String digestive_symptoms_details;
     private String additional_information;
 
+    public UserHealthGoals(int userId, String weightGoal, boolean digestiveSymptoms, String additionalInformation) {
+        this.user_id = userId;
+        this.weight_goal = weightGoal;
+        this.digestive_symptoms = digestiveSymptoms ? 1 : 0;
+        this.additional_information = additionalInformation;
+    }
+
+    public UserHealthGoals() {
+
+    }
+
     public int getHealth_goal_id() {
         return health_goal_id;
     }

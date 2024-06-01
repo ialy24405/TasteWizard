@@ -16,6 +16,9 @@ public class User {
     private LocalDate birthDate;
     private String Gender;
     private String profilePicture;
+    private UserMedicalProfile userMedicalProfile;
+    private UserPreferences userPreferences;
+    private UserHealthGoals userHealthGoals;
 
     public User(String name, String email, String password, String user, String address, String gender, LocalDate birthDate, String profilePicture) {
         this.username = name;
@@ -65,6 +68,9 @@ public class User {
     }
 
     public User() {
+        this.userPreferences = new UserPreferences();
+        this.userMedicalProfile = new UserMedicalProfile();
+        this.userHealthGoals = new UserHealthGoals();
     }
     public User(int user_id, String username, String email, String password, String role, String address) {
         this.user_id = user_id;
@@ -73,11 +79,17 @@ public class User {
         this.password = password;
         this.role = role;
         this.address = address;
+        this.userPreferences = new UserPreferences();
+        this.userMedicalProfile = new UserMedicalProfile();
+        this.userHealthGoals = new UserHealthGoals();
     }
 
     public User(String id, String password) {
         this.user_id = Integer.parseInt(id);
         this.password = password;
+        this.userPreferences = new UserPreferences();
+        this.userMedicalProfile = new UserMedicalProfile();
+        this.userHealthGoals = new UserHealthGoals();
     }
 
     public User(String name, String email, String password, String user, String address, String gender, LocalDate birthDate) {
@@ -88,6 +100,9 @@ public class User {
         this.address = address;
         this.Gender = gender;
         this.birthDate = birthDate;
+        this.userPreferences = new UserPreferences();
+        this.userMedicalProfile = new UserMedicalProfile();
+        this.userHealthGoals = new UserHealthGoals();
 
     }
 
@@ -137,5 +152,29 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setHealthGoals(UserHealthGoals userHealthGoals) {
+        this.userHealthGoals = userHealthGoals;
+    }
+
+    public void setPreferences(UserPreferences userPreferences) {
+        this.userPreferences = userPreferences;
+    }
+
+    public void setMedicalProfile(UserMedicalProfile userMedicalProfile) {
+        this.userMedicalProfile = userMedicalProfile;
+    }
+
+    public UserPreferences getPreferences() {
+        return userPreferences;
+    }
+
+    public UserMedicalProfile getMedicalProfile() {
+        return userMedicalProfile;
+    }
+
+    public UserHealthGoals getHealthGoals() {
+        return userHealthGoals;
     }
 }

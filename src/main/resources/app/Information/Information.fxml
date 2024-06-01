@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -15,34 +16,34 @@
 
 <AnchorPane prefHeight="720.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Information.InformationController">
    <children>
-      <ImageView fitHeight="139.0" fitWidth="257.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="231.0" layoutX="21.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Logo.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="339.0" layoutY="44.0" prefHeight="51.0" prefWidth="178.0" text="Welcome" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="339.0" layoutY="24.0" prefHeight="51.0" prefWidth="178.0" text="Welcome" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Label contentDisplay="CENTER" layoutX="517.0" layoutY="46.0" prefHeight="51.0" prefWidth="238.0" text="Ali" textFill="#4b7dbf" wrapText="true">
+      <Label fx:id="UserName" contentDisplay="CENTER" layoutX="517.0" layoutY="26.0" prefHeight="51.0" prefWidth="238.0" text="Ali" textFill="#4b7dbf" wrapText="true">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <ImageView fitHeight="414.0" fitWidth="335.0" layoutX="585.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="380.0" fitWidth="299.0" layoutX="611.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/InfoPic.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="89.0" prefHeight="128.0" prefWidth="508.0" text="Thank You For Your Registration , Please Fill These Feilds Carefully" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
+      <Label fx:id="WelcomeSentence" alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="67.0" prefHeight="94.0" prefWidth="508.0" text="Thank You For Your Registration , Please Fill These Feilds Carefully" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
          <font>
-            <Font name="System Bold" size="32.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="16.0" layoutY="216.0" prefHeight="423.0" prefWidth="549.0">
+      <ScrollPane layoutX="16.0" layoutY="158.0" prefHeight="540.0" prefWidth="571.0">
          <content>
-            <VBox alignment="TOP_CENTER" prefHeight="1688.0" prefWidth="539.0" spacing="10.0">
+            <VBox alignment="TOP_CENTER" prefHeight="1721.0" prefWidth="539.0" spacing="10.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="506.0" text="1-Demographic Information" textAlignment="CENTER">
                      <font>
@@ -54,136 +55,169 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName" prefHeight="35.0" prefWidth="467.0" promptText="If Any Write Here Please" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="cultural_dietary_restrictions" prefHeight="40.0" prefWidth="499.0" promptText="If Any Write Here Please" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="487.0" text="* Awareness of and Attitude towards Organic Foods" textAlignment="CENTER" textFill="#4b7dbf">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName1" prefHeight="35.0" prefWidth="467.0" promptText="If Any Write Here Please" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="organic_food_awareness" prefHeight="40.0" prefWidth="499.0" promptText="If Any Write Here Please" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="540.0" text="* Do you prefer locally-made or imported food products" textAlignment="CENTER" textFill="#4b7dbf">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="StartHour" prefHeight="28.0" prefWidth="537.0" promptText="Choose One" styleClass="ComboBox" stylesheets="@../../../../../../../../../ExamSystem-main/src/main/resources/App/style.css" />
+                  <ComboBox fx:id="food_preference" prefHeight="28.0" prefWidth="537.0" promptText="Choose One" styleClass="ComboBox">
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </ComboBox>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="506.0" text="2-Medical Information" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="96.0" prefWidth="486.0" text="* List any medical conditions or diagnoses you have been treated for with prescriptions, surgery, or other medical care in the last 5 years" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="486.0" text="* List any medical conditions or diagnoses you have been treated for with prescriptions, surgery, or other medical care in the last 5 years" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName2" prefHeight="34.0" prefWidth="539.0" promptText="If Any Write Here Please" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="medical_conditions" prefHeight="40.0" prefWidth="499.0" promptText="If Any Write Here Please" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="78.0" prefWidth="486.0" text="* List any seasonal allergies and/or food allergies, sensitivities or intolerances" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName21" prefHeight="34.0" prefWidth="539.0" promptText="If Any Write Here Please" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="allergies" prefHeight="40.0" prefWidth="539.0" promptText="If Any Write Here Please" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="72.0" prefWidth="486.0" text="If You Have any of These Please Check The Boxes" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Anemia">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="386.0" text="Cancer">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="491.0" text="Crohn’s Disease or Ulcerative Colitis">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Diabetes">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Food Allergies or Sensitivities">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Heart disease">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Hepatitis">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="High blood fats ">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="High blood pressure ">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Thyroid disease ">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="448.0" text="are you willing to stop smoking?  ">
-                     <font>
-                        <Font name="System Bold" size="25.0" />
-                     </font>
-                  </CheckBox>
+                  <VBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <CheckBox fx:id="anemia" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Anemia">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="cancer" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="386.0" text="Cancer">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="crohns_disease" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="491.0" text="Crohn’s Disease or Ulcerative Colitis">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="diabetes" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Diabetes">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="heart_disease" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Heart disease">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="hepatitis" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Hepatitis">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="high_blood_fats" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="High blood fats ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="high_blood_pressure" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="High blood pressure ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="thyroid_disease" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="435.0" text="Thyroid disease ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="tobacco_use" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="36.0" prefWidth="448.0" text="are you smoking?  ">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </VBox.margin>
+                  </VBox>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="98.0" prefWidth="486.0" text="Do you follow a special dietary plan prescribed for you, recommended by a medical provider or for religious reasons? " textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName211" prefHeight="34.0" prefWidth="539.0" promptText="If Any Write Here Please" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="special_dietary_plan" prefHeight="40.0" prefWidth="539.0" promptText="If Any Write Here Please" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="42.0" prefWidth="506.0" text="3-Health Goals" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="98.0" prefWidth="486.0" text="What change in your health or nutrition habits would you like to make? What nutrition concerns do you have?" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="StartHour1" prefHeight="28.0" prefWidth="537.0" promptText="Choose One" styleClass="ComboBox" stylesheets="@../../../../../../../../../ExamSystem-main/src/main/resources/App/style.css" />
+                  <ComboBox fx:id="weight_goal" prefHeight="28.0" prefWidth="537.0" promptText="Choose One" styleClass="ComboBox">
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" />
+                     </VBox.margin>
+                  </ComboBox>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="69.0" prefWidth="486.0" text="Do you associate any digestive symptoms with eating certain foods? " textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="386.0" text="If Yes Click Here">
+                  <CheckBox fx:id="digestive_symptoms" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="29.0" prefWidth="386.0" text="Yes">
                      <font>
-                        <Font name="System Bold" size="25.0" />
+                        <Font size="22.0" />
                      </font>
                   </CheckBox>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="97.0" prefWidth="486.0" text="Please add any additional information you feel may be relevant to understanding your nutritional health" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
@@ -191,16 +225,22 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="ExamName2111" prefHeight="34.0" prefWidth="539.0" promptText="Information" style="-fx-background-color: black; -fx-text-fill: white; -fx-background-radius: 10;">
+                  <TextField fx:id="additional_information" prefHeight="40.0" prefWidth="539.0" promptText="Information" style="-fx-background-radius: 8;">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
                   </TextField>
                </children>
+               <padding>
+                  <Insets bottom="40.0" top="20.0" />
+               </padding>
             </VBox>
          </content>
       </ScrollPane>
-      <Button fx:id="ProceedButton" layoutX="655.0" layoutY="631.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #4b7dbf;" text="Proceed">
+      <Button fx:id="ProceedButton" layoutX="655.0" layoutY="610.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #4b7dbf;" text="Proceed">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

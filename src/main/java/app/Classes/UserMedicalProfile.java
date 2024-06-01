@@ -19,6 +19,27 @@ public class UserMedicalProfile {
     private int willing_to_stop_smoking;
     private String special_dietary_plan;
 
+    public UserMedicalProfile(int userId, String medicalConditions, String allergies, boolean anemia, boolean cancer, boolean crohnsDisease, boolean diabetes, boolean heartDisease, boolean hepatitis, boolean highBloodFats, boolean highBloodPressure, boolean thyroidDisease, boolean tobaccoUse, String specialDietaryPlan) {
+        this.user_id = userId;
+        this.medical_conditions = medicalConditions;
+        this.allergies = allergies;
+        this.anemia = anemia ? 1 : 0;
+        this.cancer = cancer ? "Yes" : "No";
+        this.crohns_disease = crohnsDisease ? 1 : 0;
+        this.diabetes = diabetes ? "Yes" : "No";
+        this.heart_disease = heartDisease ? "Yes" : "No";
+        this.hepatitis = hepatitis ? 1 : 0;
+        this.high_blood_fats = highBloodFats ? 1 : 0;
+        this.high_blood_pressure = highBloodPressure ? 1 : 0;
+        this.thyroid_disease = thyroidDisease ? "Yes" : "No";
+        this.tobacco_use = tobaccoUse ? 1 : 0;
+        this.special_dietary_plan = specialDietaryPlan;
+    }
+
+    public UserMedicalProfile() {
+
+    }
+
     public int getMedical_profile_id() {
         return medical_profile_id;
     }

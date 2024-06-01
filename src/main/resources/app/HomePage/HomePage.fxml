@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.Region?>
@@ -30,7 +31,7 @@
                   </Label>
                </children>
             </Pane>
-            <HBox alignment="CENTER" prefHeight="82.0" prefWidth="295.0" spacing="20.0">
+            <HBox fx:id="ProfilePage" alignment="CENTER" prefHeight="82.0" prefWidth="295.0" spacing="20.0">
                <children>
                   <ImageView fitHeight="75.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -44,7 +45,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="69.0" prefWidth="295.0" spacing="6.0">
+            <HBox fx:id="Qustionnare" alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="69.0" prefWidth="295.0" spacing="6.0">
                <children>
                   <ImageView fitHeight="75.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -88,6 +89,6 @@
                </children></HBox>
          </children>
       </VBox>
-      <Pane prefHeight="720.0" prefWidth="934.0" style="-fx-background-color: #4b7dbf;" />
+      <AnchorPane fx:id="HomePane" prefHeight="720.0" prefWidth="829.0" style="-fx-background-color: #4b7dbf;" />
    </children>
 </HBox>

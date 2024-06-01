@@ -22,6 +22,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <ComboBox fx:id="StartHour1" layoutX="71.0" layoutY="226.0" prefHeight="44.0" prefWidth="308.0" promptText="Choose One" styleClass="ComboBox" stylesheets="@../../../../../../../../../ExamSystem-main/src/main/resources/App/style.css" />
+      <ComboBox fx:id="Category" layoutX="71.0" layoutY="226.0" prefHeight="44.0" prefWidth="308.0" promptText="Choose One" styleClass="ComboBox" />
    </children>
 </AnchorPane>

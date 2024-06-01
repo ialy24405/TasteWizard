@@ -2,6 +2,8 @@ package app.Register;
 
 import app.Classes.User;
 import app.Database.DB;
+import app.Information.InformationApplication;
+import app.Information.InformationController;
 import app.tastewizard.TasteWizardHome;
 import app.tastewizard.TasteWizardHomeController;
 import javafx.event.ActionEvent;
@@ -99,8 +101,23 @@ public class RegisterPageController {
             if (password.equals(confirmPassword)) {
                 user = new User(name, email, password, "user", address,Gender,birthDate,profilePicture);
                 DB db = new DB();
-                if (db.AddUser(user)) {
-                    System.out.println("User added successfully");
+                user.setUser_id(db.AddUser(user));
+                if (user.getUser_id() > 0){
+                    FXMLLoader fxmlLoader = new FXMLLoader(InformationApplication.class.getResource("Information.fxml"));
+                    Scene scene = null;
+                    try {
+                        scene = new Scene(fxmlLoader.load());
+                        InformationController controller = fxmlLoader.getController();
+                        controller.setUserInfo(user);
+                    } catch (IOException exception) {
+                        System.out.println("Error in loading TasteWizardHome.fxml: "+exception.getMessage());
+                    }
+                    Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+                    // Set the scene for the stage
+                    stage.setScene(scene);
+                    // Show the stage
+                    stage.show();
+
                 } else {
                     System.out.println("Error in adding user");
                 }
