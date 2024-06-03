@@ -22,7 +22,7 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <Button fx:id="ProceedButton1" layoutX="322.0" layoutY="646.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="324.0" style="-fx-background-color: #4b7dbf;" text="Back">
+      <Button fx:id="ProceedButton" layoutX="322.0" layoutY="646.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="324.0" style="-fx-background-color: #4b7dbf;" text="Back">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
@@ -30,10 +30,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <TableView layoutX="11.0" layoutY="106.0" prefHeight="524.0" prefWidth="915.0">
+      <TableView fx:id="ResultsTable" layoutX="11.0" layoutY="106.0" prefHeight="524.0" prefWidth="915.0">
         <columns>
-          <TableColumn prefWidth="472.0" text="7oka" />
-          <TableColumn prefWidth="439.0" text="4bkat" />
+          <TableColumn fx:id="RecommendationColumn" prefWidth="472.0" text="Product" />
+          <TableColumn fx:id="SimilartyColumn" prefWidth="439.0" text="Similarity" />
         </columns>
       </TableView>
    </children>

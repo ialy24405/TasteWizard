@@ -13,6 +13,9 @@ module app.tastewizard {
     requires java.sql;
     requires javafx.media;
 
+    opens app.Classes to javafx.base;
+    exports app.Classes;
+
     opens app.tastewizard to javafx.fxml;
     exports app.tastewizard;
 
@@ -40,5 +43,9 @@ module app.tastewizard {
     opens app.Results to javafx.fxml;
     exports app.Results;
 
+    opens app.SweetSnackes to javafx.fxml;
+    exports app.SweetSnackes;
 
+    opens app.ResultCategory to javafx.fxml;
+    exports app.ResultCategory;
 }

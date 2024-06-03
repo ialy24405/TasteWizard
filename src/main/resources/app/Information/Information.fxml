@@ -14,34 +14,34 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="934.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Information.InformationController">
+<AnchorPane prefHeight="720.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Information.InformationController">
    <children>
-      <ImageView fitHeight="113.0" fitWidth="231.0" layoutX="21.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="113.0" fitWidth="231.0" layoutX="21.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/Logo.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="339.0" layoutY="24.0" prefHeight="51.0" prefWidth="178.0" text="Welcome" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="302.0" layoutY="24.0" prefHeight="51.0" prefWidth="178.0" text="Welcome" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <Label fx:id="UserName" contentDisplay="CENTER" layoutX="517.0" layoutY="26.0" prefHeight="51.0" prefWidth="238.0" text="Ali" textFill="#4b7dbf" wrapText="true">
+      <Label fx:id="UserName" contentDisplay="CENTER" layoutX="480.0" layoutY="26.0" prefHeight="51.0" prefWidth="238.0" text="Ali" textFill="#4b7dbf" wrapText="true">
          <font>
             <Font name="System Bold" size="35.0" />
          </font>
       </Label>
-      <ImageView fitHeight="380.0" fitWidth="299.0" layoutX="611.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="338.0" fitWidth="205.0" layoutX="599.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/InfoPic.png" />
          </image>
       </ImageView>
-      <Label fx:id="WelcomeSentence" alignment="CENTER" contentDisplay="CENTER" layoutX="213.0" layoutY="67.0" prefHeight="94.0" prefWidth="508.0" text="Thank You For Your Registration , Please Fill These Feilds Carefully" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
+      <Label fx:id="WelcomeSentence" alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="67.0" prefHeight="94.0" prefWidth="508.0" text="Thank You For Your Registration , Please Fill These Feilds Carefully" textAlignment="CENTER" textFill="#4b7dbf" wrapText="true">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <ScrollPane layoutX="16.0" layoutY="158.0" prefHeight="540.0" prefWidth="571.0">
+      <ScrollPane layoutX="16.0" layoutY="158.0" prefHeight="540.0" prefWidth="554.0">
          <content>
             <VBox alignment="TOP_CENTER" prefHeight="1721.0" prefWidth="539.0" spacing="10.0">
                <children>
@@ -240,7 +240,7 @@
             </VBox>
          </content>
       </ScrollPane>
-      <Button fx:id="ProceedButton" layoutX="655.0" layoutY="610.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #4b7dbf;" text="Proceed">
+      <Button fx:id="ProceedButton" layoutX="597.0" layoutY="441.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="220.0" style="-fx-background-color: #4b7dbf;" text="Proceed">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

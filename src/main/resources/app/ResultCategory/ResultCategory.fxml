@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="323.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.Que.QueController">
+<VBox alignment="CENTER" prefHeight="323.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ResultCategory.ResultCategoryController">
    <children>
       <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="338.0" text="Choose Category" textAlignment="CENTER" textFill="#4b7dbf">
          <font>

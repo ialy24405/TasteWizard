@@ -122,6 +122,7 @@ public class InformationController {
                 scene = new Scene(fxmlLoader.load());
                 HomePageController controller = fxmlLoader.getController();
                 controller.setUser(user);
+                controller.setprofile();
             } catch (Exception exception) {
                 System.out.println("Error in loading HomePage.fxml: " + exception.getMessage());
                 exception.printStackTrace();
@@ -134,7 +135,10 @@ public class InformationController {
             }
             else
             {
-                System.out.println("Error in updating user");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error in updating user information");
+                alert.showAndWait();
             }
         };
     }
@@ -290,5 +294,9 @@ public class InformationController {
         digestive_symptoms.setSelected(user.getHealthGoals().getDigestive_symptoms()==1);
         additional_information.setText(user.getHealthGoals().getAdditional_information().equalsIgnoreCase("no")?"N/A":user.getHealthGoals().getAdditional_information());
 
+    }
+    public void disableProceedButton() {
+        ProceedButton.setVisible(false);
+        ProceedButton.setManaged(false);
     }
 }

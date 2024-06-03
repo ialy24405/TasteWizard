@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -44,6 +45,7 @@ public class TasteWizardHomeController {
                     scene = new Scene(fxmlLoader.load());
                     HomePageController controller = fxmlLoader.getController();
                     controller.setUser(user);
+                    controller.setprofile();
                 } catch (Exception exception) {
                     System.out.println("Error in loading TasteWizardHome.fxml: " + exception.getMessage());
                     exception.printStackTrace();
@@ -57,6 +59,12 @@ public class TasteWizardHomeController {
             } else {
                 ID.setText("");
                 Password.setText("");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Invalid ID or Password");
+                alert.setContentText("Please enter a valid ID and Password");
+                alert.showAndWait();
+
             }
         };
     }

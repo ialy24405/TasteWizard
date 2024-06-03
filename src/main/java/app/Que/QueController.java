@@ -4,6 +4,10 @@ import app.Categoryis.CategoryisApplication;
 import app.Categoryis.CategoryisController;
 import app.Classes.User;
 import app.HomePage.HomePageController;
+import app.Snacks.SnacksApplication;
+import app.Snacks.SnacksController;
+import app.SweetSnackes.SweetSnacksApplication;
+import app.SweetSnackes.SweetSnacksController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -38,11 +42,33 @@ public class QueController {
                     homePageController.setPane(pane);
                 } catch (Exception ex) {
                     System.out.println("Error: " + ex.getMessage());
+                    ex.printStackTrace();
                 }
             } else if (category.equalsIgnoreCase("Sweet Snacks")) {
                 category = "SweetSnakes";
+                FXMLLoader fxmlLoader = new FXMLLoader(SweetSnacksApplication.class.getResource("SweetSnackes.fxml"));
+                try {
+                    AnchorPane pane = fxmlLoader.load();
+                    SweetSnacksController controller = fxmlLoader.getController();
+                    controller.setUser(user);
+                    homePageController.setPane(pane);
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex.getMessage());
+                    ex.printStackTrace();
+                }
             } else if (category.equalsIgnoreCase("Salty Snacks")) {
                 category = "SaltySnakes";
+                FXMLLoader fxmlLoader = new FXMLLoader(SnacksApplication.class.getResource("Snacks.fxml"));
+                try {
+                    AnchorPane pane = fxmlLoader.load();
+                    SnacksController controller = fxmlLoader.getController();
+                    controller.setUser(user);
+                    homePageController.setPane(pane);
+                } catch (Exception ex) {
+                    System.out.println("Error: " + ex.getMessage());
+                    ex.printStackTrace();
+                }
+
             }
 //            System.out.println("Category: " + category);
             homePageController.setUser(user);

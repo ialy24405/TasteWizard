@@ -7,6 +7,11 @@ import app.Information.InformationApplication;
 import app.Information.InformationController;
 import app.Que.QueApplication;
 import app.Que.QueController;
+import app.Register.RegisterPageController;
+import app.ResultCategory.ResultCategoryApplication;
+import app.ResultCategory.ResultCategoryController;
+import app.Results.ResultsApplication;
+import app.Results.ResultsController;
 import app.tastewizard.TasteWizardHome;
 import app.tastewizard.TasteWizardHomeController;
 import javafx.event.EventHandler;
@@ -45,31 +50,57 @@ public class HomePageController {
     private HBox ProfilePage;
     @FXML
     private AnchorPane HomePane;
+    @FXML
+    private HBox ResultsPage;
     public void initialize() {
         LogOutBox.setOnMouseClicked(LogOutBoxClicked());
         Qustionnare.setOnMouseClicked(QustionnareClicked());
         ProfilePage.setOnMouseClicked(ProfilePageClicked());
+        ResultsPage.setOnMouseClicked(ResultsPageClicked());
     }
 
-    private EventHandler<? super MouseEvent> ProfilePageClicked() {
+    private EventHandler<? super MouseEvent> ResultsPageClicked() {
         return e -> {
-            FXMLLoader fxmlLoader = new FXMLLoader(InformationApplication.class.getResource("Information.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(ResultCategoryApplication.class.getResource("ResultCategory.fxml"));
             Scene scene = null;
             try {
                 scene = new Scene(fxmlLoader.load());
-                InformationController controller = fxmlLoader.getController();
-                controller.setUserInfo(user);
-                controller.setViewOnly(true);
-
+                ResultCategoryController controller = fxmlLoader.getController();
+                controller.setUser(user);
+                controller.setHomePageController(this);
             } catch (Exception exception) {
                 System.out.println("Error in loading TasteWizardHome.fxml: " + exception.getMessage());
                 exception.printStackTrace();
             }
-            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            Stage stage = new Stage();
             // Set the scene for the stage
+            stage.initModality(Modality.APPLICATION_MODAL); // This line makes the new window modal
             stage.setScene(scene);
             // Show the stage
-            stage.show();
+            stage.showAndWait();
+        };
+    }
+
+    private EventHandler<? super MouseEvent> ProfilePageClicked() {
+        return e -> {
+//            FXMLLoader fxmlLoader = new FXMLLoader(InformationApplication.class.getResource("Information.fxml"));
+//            Scene scene = null;
+//            try {
+//                scene = new Scene(fxmlLoader.load());
+//                InformationController controller = fxmlLoader.getController();
+//                controller.setUserInfo(user);
+//                controller.setViewOnly(true);
+//
+//            } catch (Exception exception) {
+//                System.out.println("Error in loading TasteWizardHome.fxml: " + exception.getMessage());
+//                exception.printStackTrace();
+//            }
+//            Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+//            // Set the scene for the stage
+//            stage.setScene(scene);
+//            // Show the stage
+//            stage.show();
+            previewProfile();
         };
     }
 
@@ -155,8 +186,30 @@ public class HomePageController {
     public void setUser(User user) {
         this.user = user;
         previewData();
-
+//        previewProfile();
     }
+
+    private void previewProfile() {
+        FXMLLoader fxmlLoader = new FXMLLoader(InformationApplication.class.getResource("Information.fxml"));
+        AnchorPane scene = null;
+        try {
+            scene = fxmlLoader.load();
+            InformationController controller = fxmlLoader.getController();
+            controller.setUserInfo(user);
+            controller.setViewOnly(true);
+            controller.disableProceedButton();
+            setPane(scene);
+        } catch (Exception exception) {
+            System.out.println("Error in loading TasteWizardHome.fxml: " + exception.getMessage());
+            exception.printStackTrace();
+        }
+//        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+//        // Set the scene for the stage
+//        stage.setScene(scene);
+//        // Show the stage
+//        stage.show();
+    }
+
     private Category category;
     public void setCategory(String category) {
         DB db = new DB();
@@ -175,5 +228,18 @@ public class HomePageController {
         HomePane.getChildren().clear();
         HomePane.getChildren().add(pane);
         HomePane.setStyle("-fx-background-color: white");
+    }
+
+    public void setprofile() {
+        previewProfile();
+
+    }
+
+    public void setScene(Scene scene) {
+        Stage stage = (Stage) HomePane.getScene().getWindow();
+        // Set the scene for the stage
+        stage.setScene(scene);
+        // Show the stage
+        stage.show();
     }
 }
